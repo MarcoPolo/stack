@@ -104,9 +104,9 @@ class Card extends React.Component<Props> {
             pointerEvents="none"
           />
         ) : null}
-        {backgroundOpacity ? (
+        {true ? (
           <Animated.View
-            style={[baseCardStyle, { backgroundOpacity }]}
+            style={[baseCardStyle, { backgroundColor: 'red', opacity: active }]}
             pointerEvents="none"
           />
         ) : null}
