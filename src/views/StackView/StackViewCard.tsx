@@ -73,6 +73,7 @@ class Card extends React.Component<Props> {
     const animatedStyle = this.props.animatedStyle || {};
 
     const {
+      backgroundOpacity,
       shadowOpacity,
       overlayOpacity,
       ...containerAnimatedStyle
@@ -100,6 +101,12 @@ class Card extends React.Component<Props> {
         {!transparent && shadowOpacity ? (
           <Animated.View
             style={[styles.shadow, { shadowOpacity }]}
+            pointerEvents="none"
+          />
+        ) : null}
+        {backgroundOpacity ? (
+          <Animated.View
+            style={[baseCardStyle, { backgroundOpacity }]}
             pointerEvents="none"
           />
         ) : null}
